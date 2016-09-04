@@ -4,7 +4,7 @@ Get stack through homebrew. We use stack here because cabal seems to have proble
 
 `brew install haskell-stack`
 
-Initialise the environment for stack before
+Initialise the environment for stack before use. This will install the basic Haskell toolchain.
 
 `stack setup`
 
