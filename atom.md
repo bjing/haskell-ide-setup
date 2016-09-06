@@ -49,4 +49,4 @@ apm install language-haskell haskell-ghc-mod linter-hlint autocomplete-haskell i
 All the executables installed by `stack` sit under ${HOME}/.local/bin/. For Atom to recognise them, either add the directory to your `PATH` environment variable or individually configure each Atom package.
 
 # Screenshots
-![screenshot](../blob/master/images/screenshot-1.png "Syntax highlighter and linter")
+![screenshot](images/screenshot-1.png "Syntax highlighter and linter")
