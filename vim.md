@@ -1,4 +1,3 @@
-# Haskell
 ## Stack
 Get stack through homebrew. We use `stack` here because cabal seems to have problem installing ghc-mod; it cannot automatically resolve the dependencies required for the package.
 
@@ -39,14 +38,11 @@ alias ghc='stack ghc'
 alias ghci='stack ghci'
 ```
 
-# Atom
-## Atom packages
-```
-apm install language-haskell haskell-ghc-mod linter-hlint autocomplete-haskell ide-haskell
-```
+# VIM
+Stephen Diehl has a very comprehensive guide on setting up a Haskell development environment in VIM.
 
-## Atom configuration
-All the executables installed by `stack` sit under ${HOME}/.local/bin/. For Atom to recognise them, either add the directory to your `PATH` environment variable or individually configure each Atom package.
+[Vim and Haskell in 2016 by Stephen Diehl](http://www.stephendiehl.com/posts/vim_2016.html)
 
-# Screenshots
-![screenshot](../blob/master/images/screenshot-1.png "Syntax highlighter and linter")
+## Example configuration
+Here's my own VIM configuration file. User it as a reference.
+[.vimrc](../blob/master/config/.vimrc)
