@@ -45,4 +45,4 @@ Stephen Diehl has a very comprehensive guide on setting up a Haskell development
 
 ## Example configuration
 Here's my own VIM configuration file. User it as a reference.
-[.vimrc](../blob/master/config/.vimrc)
+[.vimrc](config/.vimrc)
