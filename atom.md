@@ -30,7 +30,15 @@ Unlike cabal, you need to start all the Haskell tools through stack like this:
 stack ghci
 ```
 
-Alternatively you can create some aliases in your shell for the most frequently used commands like `ghc` and `ghci`.
+Or you can add the ghc/ghci path to your PATH environment variable in ~/.bashrc or ~/.bash_profile. 
+For example:
+```
+PATH="${HOME}/.stack/programs/x86_64-osx/ghc-8.0.1/bin:${PATH}"
+export PATH
+```
+
+Alternatively, create some aliases in your shell for the most frequently used commands like `ghc` and `ghci`.
+For example:
 
 For example:
 
