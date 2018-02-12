@@ -58,7 +58,7 @@ dotspacemacs-configuration-layers
                       auto-completion-private-snippets-directory nil)
      (haskell :variables
               haskell-completion-backend 'intero
-              haskell-enable-hindent-style "johan-tibell")
+              haskell-enable-hindent-style "johan-tibell"))
 ```
 After adding the above config, relaunch your Spacemacs editor using `SPC q r`
 
