@@ -49,13 +49,13 @@ dotspacemacs-configuration-layers
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-snippets-in-popup t
-                      auto-completion-return-key-behavior 'complete
+                      auto-completion-private-snippets-directory nil
                       
                       ;; the following are default behaviours, change per your needs
+                      auto-completion-return-key-behavior 'complete
                       auto-completion-tab-key-behavior 'cycle
                       auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.1
-                      auto-completion-private-snippets-directory nil)
+                      auto-completion-complete-with-key-sequence-delay 0.1)
      (haskell :variables
               haskell-completion-backend 'intero
               haskell-enable-hindent-style "johan-tibell"))
