@@ -1,5 +1,3 @@
-# Outdated. REQUIRE UPDATING
-
 Stephen Diehl has a very comprehensive guide on setting up a Haskell development environment in VIM.
 
 [Vim and Haskell in 2016 by Stephen Diehl](http://www.stephendiehl.com/posts/vim_2016.html)
