@@ -46,8 +46,8 @@ stack build --copy-compiler-tool intero hlint stylish-haskell hasktags hoogle ap
 
 [Atom](atom.md)
 
-[Vim](vim.md)
-
 [Spacemacs](spacemacs.md)
+
+[Vim](vim.md)
 
 [Visual Studio Code](vscode.md)
