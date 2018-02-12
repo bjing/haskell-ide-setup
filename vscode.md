@@ -1,6 +1,4 @@
-# Outdated. REQUIRE UPDATING
-
-## Extensions
+## VS Code Extensions
 * `Haskell Syntax Highlighting`
 * `Haskero`
 * `haskell-linter`
