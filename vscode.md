@@ -1,5 +1,3 @@
-# Visual Studio Code
-
 # Outdated. REQUIRE UPDATING
 
 ## Extensions

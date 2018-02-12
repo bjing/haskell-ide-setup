@@ -1,5 +1,3 @@
-Haskell IDEs Setup
-
 # Introduction
 In this document I'll list the editors/IDEs I've personally used and the way how you can configured them to work with Haskell to have features like:
 * auto complete
@@ -37,7 +35,7 @@ stack build --copy-compiler-tool intero hlint
 * `hoogle` - provides api doc lookup
 * [`Hasklig`](https://github.com/i-tu/Hasklig)
 
-#### Put it all together
+#### Putting it all together
 Apart from Hasklig which requires manual [download](https://github.com/i-tu/Hasklig), I usually install them like this:
 ```shell
 stack build --copy-compiler-tool intero hlint stylish-haskell hasktags hoogle apply-refact

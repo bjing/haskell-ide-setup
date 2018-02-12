@@ -1,5 +1,3 @@
-# Haskell
-
 # Outdated. REQUIRE UPDATING
 
 ## Atom packages

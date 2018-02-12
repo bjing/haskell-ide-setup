@@ -1,5 +1,3 @@
-# VIM
-
 # Outdated. REQUIRE UPDATING
 
 Stephen Diehl has a very comprehensive guide on setting up a Haskell development environment in VIM.

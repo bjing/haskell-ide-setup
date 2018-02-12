@@ -1,3 +1,1 @@
-# Spacemacs
-
 # WORK IN PROGRESS
