@@ -1,8 +1,12 @@
 # Outdated. REQUIRE UPDATING
 
 ## Extensions
-* Haskell Syntax Highlighting
-* haskell ghc-mod
+* `Haskell Syntax Highlighting`
+* `Haskero`
+* `haskell-linter`
+* `hoogle-vscode`
+* `stylish-haskell`
+* `Hindent Format`
 
 ## Hasklig
 Download [Hasklig](https://github.com/i-tu/Hasklig).
