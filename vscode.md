@@ -1,4 +1,7 @@
 # Visual Studio Code
+
+# Outdated. REQUIRE UPDATING
+
 ## Extensions
 * Haskell Syntax Highlighting
 * haskell ghc-mod
