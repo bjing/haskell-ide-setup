@@ -57,7 +57,7 @@ dotspacemacs-configuration-layers
                       auto-completion-complete-with-key-sequence nil
                       auto-completion-complete-with-key-sequence-delay 0.1)
      (haskell :variables
-              haskell-completion-backend 'intero
+              haskell-completion-backend 'intero ;; this is outdated, if you find a good backend, please don't hesitate to suggest it
               haskell-enable-hindent-style "johan-tibell"))
 ```
 After adding the above config, relaunch your Spacemacs editor using `SPC q r`
