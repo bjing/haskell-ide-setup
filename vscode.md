@@ -33,7 +33,7 @@ If the [Haskell] extension doesn't work, here's a few things you can try:
       # or for a specific version:
       stack ./install.hs hls-<version>
       ```
-* From inside VSCode, manually specify path to `haskell-language-server` executable, it's either `~/.ghcup/bin/haskell-language-server-<version`> or `~/.local/bin/haskell-language-server`.
+* From inside VSCode, manually specify path to `haskell-language-server` executable, it's either `~/.ghcup/bin/haskell-language-server-<version>` or `~/.local/bin/haskell-language-server`.
 ![](images/screenshot-hls-vscode.png "HLS custom path in VSCode")
 
 ### Stylish Haskell
