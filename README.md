@@ -12,7 +12,7 @@ The tools you'll need:
 * GHC (the compiler)
 * Build tools, `Stack` or `Cabal`
 * HLS (Haskell Language Server, this is the only IDE engine you need)
-* other tools like `hlin`t, `stylish-haskell`, `hasktags`, `hoogle` etc, choose whatever you need.
+* other tools like `hlint`, `stylish-haskell`, `hasktags`, `hoogle` etc, choose whatever you need.
 
 The easiest way to get started with Haskell is to use [GHCup](https://www.haskell.org/ghcup/).
 
@@ -24,12 +24,12 @@ Install GHCup on Unix-like systems:
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 ```
 
-Frequently run this command to upgrade GHCup
+Frequently run this command to upgrade GHCup:
 ```
 ghcup upgrade
 ```
 
-List available tools you can install
+List available tools you can install and have installed:
 ```
 ghcup list
 ```
@@ -55,7 +55,7 @@ ghcup install hls
 ```
 
 All versions of binaries will be installed in `~/.ghcup/bin`.
-Please browse this directory to get familiar with how files are organised, and make sure the relevant version is under your `$PATH` env var.
+Please browse this directory to get familiar with how files are organised, and make sure the relevant version is under your `$PATH` env var for easy access.
 
 
 ## Installation (Stack)
