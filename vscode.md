@@ -15,7 +15,26 @@ The [Haskell] extension is the most important extension out of the bunch, it sup
 * function documentation on hover
 * code suggestion
 
-If the [Haskell] extension doesn't work, make sure your GHC is the latest LTS snapshot.
+If the [Haskell] extension doesn't work, here's a few things you can try:
+* Install Haskell Language Server by hand:
+  * By using ghcup
+    ```
+    ghcup install hls
+
+    # or for a specific version
+    ghcup install hls <version>
+    ```
+  * By installing manually from source
+    * clone `https://github.com/haskell/haskell-language-server`
+    * Run:
+      ```
+      stack ./install.hs hls
+
+      # or for a specific version:
+      stack ./install.hs hls-<version>
+      ```
+* From inside VSCode, manually specify path to `haskell-language-server` executable, it's either `~/.ghcup/bin/haskell-language-server-<version`> or `~/.local/bin/haskell-language-server`.
+![](images/screenshot-hls-vscode.png "HLS custom path in VSCode")
 
 ### Stylish Haskell
 stylish-haskell is a decent Haskell code formatter.
