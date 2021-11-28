@@ -8,9 +8,57 @@ In this document I list all editors/IDEs I've personally used and the way to con
 I will try to keep these instructions up-to-date. However, feel free to send PR requests if you spot anything wrong or out-of-date.
 
 # Haskell Tools
-Haskell tools like linters, formatters need to be installed correctly in order for IDEs/editors to use them. Since I use [stack](https://docs.haskellstack.org/en/stable/README/) personally, I'll discuss the correct way to install these tools using `stack`.
+The tools you'll need:
+* GHC (the compiler)
+* Build tools, `Stack` or `Cabal`
+* HLS (Haskell Language Server, this is the only IDE engine you need)
+* other tools like `hlin`t, `stylish-haskell`, `hasktags`, `hoogle` etc, choose whatever you need.
 
-## Installation
+The easiest way to get started with Haskell is to use [GHCup](https://www.haskell.org/ghcup/).
+
+Since I use [stack](https://docs.haskellstack.org/en/stable/README/) personally, I'll discuss the correct way to install these tools using `stack` as well.
+
+## Installation (GHCup)
+Install GHCup on Unix-like systems:
+```
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+```
+
+Frequently run this command to upgrade GHCup
+```
+ghcup upgrade
+```
+
+List available tools you can install
+```
+ghcup list
+```
+
+Install GHC
+```
+# latest
+ghcup install ghc
+
+# or a specific version
+ghcup install ghc 8.10.7
+```
+
+Install build tools.
+```
+ghcup install stack
+ghcup install cabal
+```
+
+Install `haskell-language-server`, this is what will provide IDE capabilities in your editor (VSCode, VIM, Emacs etc)
+```
+ghcup install hls
+```
+
+All versions of binaries will be installed in `~/.ghcup/bin`.
+Please browse this directory to get familiar with how files are organised, and make sure the relevant version is under your `$PATH` env var.
+
+
+## Installation (Stack)
 
 ### The wrong way
 A lot of people use `stack install` to install tools like `hlint` and `stylish-haskell`, which by default puts the binaries into ~/.local/bin. This is a very bad idea because these "globally" installed tools only work with a specific version of GHC. If you have multiple projects that use multiple versions of GHC, then your editor won't work with all the projects; or if you later upgrade to a higher version of GHC these tools will simply stop working.
