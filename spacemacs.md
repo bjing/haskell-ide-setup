@@ -1,17 +1,19 @@
 # Installation
 To install Spacemacs, there's nothing better than referring to the official [Spacemacs installation manual](https://github.com/syl20bnr/spacemacs#install).
 For the lazy, howver here's some quick instructions.
-## Mac OSX
+
+## Mac OSX and Linux
 ```shell
-# Install Emacs
+# Install Emacs macOS
 brew tap d12frosted/emacs-plus
 brew install emacs-plus --HEAD --with-natural-title-bars
 brew linkapps emacs-plus
 
+# Install Emacs Linux (omitted)
+
 # (Optional) back up your existing emacs config
-cd ~
-mv .emacs.d .emacs.d.bak
-mv .emacs .emacs.bak
+mv ~/.emacs.d ~/.emacs.d.bak
+mv ~/.emacs ~/.emacs.bak
 
 # Clone Spacemacs repository
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
@@ -19,26 +21,10 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 Optionally you can install the [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) font, which is used by Spacemacs by default.
 
-## Linux or Mac OSX
-Since there are many Linux distributions, I can't cover them all here. It's also pointless to make assumption of what distribution you use, so I'll leave it to you to figure out how to install `Emacs`. I'm sure gurus like you know exactly how to install Emacs for your distribution.
-
-After you've installed Emacs, Back up your existing Emacs config if you want to keep it.
-```shell
-cd ~
-mv .emacs.d .emacs.d.bak
-mv .emacs .emacs.bak
-```
-
-Then simply clone the Spacemacs repo into your home directory.
-```shell
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-```
-
 ## Windows
 Download Emacs [here](http://emacsbinw64.sourceforge.net/). It is recommended to install the most recent stable build.
 
 Be sure to declare a environment variable named HOME pointing to your user directory C:\Users\<username>. Then you can clone Spacemacs in this directory.
-
 
 # Haskell Configuration
 Put the following configuration in your `~/.spacemacs` file under `dotspacemacs-configuration-layers`:
@@ -56,12 +42,26 @@ dotspacemacs-configuration-layers
                       auto-completion-tab-key-behavior 'cycle
                       auto-completion-complete-with-key-sequence nil
                       auto-completion-complete-with-key-sequence-delay 0.1)
-     (haskell :variables
-              haskell-completion-backend 'lsp
-              haskell-enable-hindent-style "johan-tibell"))
+     (haskell         :variables
+                      haskell-completion-backend 'lsp
+                      haskell-process-type 'stack-ghci
+                      haskell-enable-hindent t
+                      haskell-enable-hindent-style "johan-tibell")
      neotree
      syntax-checking
     )
+    
+;; Add the following to the top level of your ~/.spacemcas.
+;; This gives you the correct indentation when you press ENTER from an empty line
+(defun haskell-indentation-advice ()
+  (when (and (< 1 (line-number-at-pos))
+             (save-excursion
+               (forward-line -1)
+               (string= "" (s-trim (buffer-substring (line-beginning-position) (line-end-position))))))
+    (delete-region (line-beginning-position) (point))))
+
+(advice-add 'haskell-indentation-newline-and-indent
+            :after 'haskell-indentation-advice)
 ```
 After adding the above config, relaunch your Spacemacs editor using `SPC q r`
 
