@@ -91,13 +91,13 @@ stack build --copy-compiler-tool hlint apply-refact stylish-haskell hasktags hoo
 
 # IDE/Editor Configuration
 
-[Visual Studio Code](vscode.md) - easiest to get started and works reasonably well
-
 [Spacemacs](spacemacs.md) - for full keyboard operation
 
-[Vim](vim.md) - for full keyboard opeation
+[VIM/Neovim](neovim.md) - for full keyboard operaton
 
-[Atom](atom.md) - does anyone still use Atom?
+[Visual Studio Code](vscode.md) - easiest to get started and works reasonably well 
+
+[Atom](atom.md) - does anyone still use Atom? If yes, feel free to contribute
 
 [apply-refact]: https://github.com/mpickering/apply-refact
 [haskell-language-server]: https://github.com/haskell/haskell-language-server
