@@ -16,8 +16,6 @@ I will try to keep these instructions up-to-date. However, feel free to send PR 
 
 [Visual Studio Code](vscode.md) - easiest to get started and works reasonably well 
 
-[Atom](atom.md) - does anyone still use Atom? If yes, feel free to contribute
-
 
 # Haskell Tools
 The tools you'll need:
