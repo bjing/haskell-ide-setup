@@ -41,7 +41,7 @@ stylish-haskell is a decent Haskell code formatter.
 
 The extension requires the actual tool be installed:
 ```
-stack install stylish-haskell
+stack build --copy-compiler-tool stylish-haskell
 ```
 
 In Settings, make sure:
