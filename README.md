@@ -93,7 +93,7 @@ stack build --copy-compiler-tool hlint apply-refact stylish-haskell hasktags hoo
 
 [Spacemacs](spacemacs.md) - for full keyboard operation
 
-[VIM/Neovim](neovim.md) - for full keyboard operaton
+[VIM/Neovim](vim-and-neovim.md) - for full keyboard operaton
 
 [Visual Studio Code](vscode.md) - easiest to get started and works reasonably well 
 
