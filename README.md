@@ -7,6 +7,18 @@ In this document I list all editors/IDEs I've personally used and the way to con
 
 I will try to keep these instructions up-to-date. However, feel free to send PR requests if you spot anything wrong or out-of-date.
 
+
+# IDE/Editor Configuration
+
+[Spacemacs](spacemacs.md) - for full keyboard operation
+
+[VIM/Neovim](vim-and-neovim.md) - for full keyboard operaton
+
+[Visual Studio Code](vscode.md) - easiest to get started and works reasonably well 
+
+[Atom](atom.md) - does anyone still use Atom? If yes, feel free to contribute
+
+
 # Haskell Tools
 The tools you'll need:
 * GHC (the compiler)
@@ -89,16 +101,6 @@ Apart from Hasklig which requires manual [download](https://github.com/i-tu/Hask
 stack build --copy-compiler-tool hlint apply-refact stylish-haskell hasktags hoogle
 ```
 
-# IDE/Editor Configuration
-
-[Spacemacs](spacemacs.md) - for full keyboard operation
-
-[VIM/Neovim](vim-and-neovim.md) - for full keyboard operaton
-
-[Visual Studio Code](vscode.md) - easiest to get started and works reasonably well 
-
-[Atom](atom.md) - does anyone still use Atom? If yes, feel free to contribute
-
 [apply-refact]: https://github.com/mpickering/apply-refact
 [haskell-language-server]: https://github.com/haskell/haskell-language-server
 [Hasklig]: https://github.com/i-tu/Hasklig
@@ -106,3 +108,4 @@ stack build --copy-compiler-tool hlint apply-refact stylish-haskell hasktags hoo
 [hlint]: https://github.com/ndmitchell/hlint
 [hoogle]: https://github.com/ndmitchell/hoogle
 [stylish-haskell]: https://github.com/haskell/stylish-haskell
+
