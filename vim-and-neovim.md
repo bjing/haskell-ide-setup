@@ -31,9 +31,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 For Neovim, put the following plugin config in `~/.config/nvim/init.vim`
 ```vim
 call plug#begin("~/.config/nvim/plugged")
-
 " Plugin Section
- Plug 'dracula/vim'
+ Plug 'dracula/vim', {'as': 'dracula'}
+ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+ Plug 'EdenEast/nightfox.nvim'
  Plug 'ryanoasis/vim-devicons'
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
@@ -42,10 +43,14 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'preservim/nerdcommenter' | Plug 'Xuyuanp/nerdtree-git-plugin'
  Plug 'mhinz/vim-startify'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'neovimhaskell/haskell-vim'
  Plug 'ctrlpvim/ctrlp.vim'
  Plug 'tpope/vim-fugitive'
  Plug 'alx741/vim-stylishask'
  Plug 'alx741/vim-hindent'
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
+ Plug 'chrisbra/csv.vim'
 call plug#end()
 ```
 For VIM, simply put the above in `~/.vimrc` and replace `~/.config/nvim/plugged` 
@@ -71,30 +76,53 @@ In `vim` or `nvim`, run `:CocConfig` and add the following Haskell-related confi
       ],
       "rootPatterns": [
         ".stack.yaml",
-        ".hie-bios",
-        "BUILD.bazel",
+        "*.cabal",
         "cabal.config",
-        "package.yaml"
+        "package.yaml",
+        ".hie-bios",
+        "hie.yaml",
+        "BUILD.bazel"
       ],
       "filetypes": [
         "hs",
         "lhs",
         "haskell"
-      ]
+      ],
+      "initializationOptions": {
+        "languageServerHaskell": {
+          "hlintOn": true,
+          "maxNumberOfProblems": 10,
+          "completionSnippetsOn": true
+        }
+      }
     }
   },
-
+  "suggest.disableKind": true,
+  "suggest.snippetsSupport": false,
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "haskell",
     "json"
   ],
+  "coc.preferences.enableMarkdown": true,
+  "coc.preferences.jumpCommand": "tab drop",
+  "codeLens.enable": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.virtualTextLines": 1,
+  "diagnostic.virtualTextPrefix": " —— ",
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•"
 }
 ```
+
+## Misc
+Choose a good [colorscheme](https://github.com/topics/neovim-colorscheme).
+This is very important as colour scheme can either make your code easy to
+read, or make your life miserable.
 
 ## Example Neovim config
 My Neovim config can be found [here](config/init.vim).

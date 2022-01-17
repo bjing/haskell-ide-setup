@@ -1,5 +1,5 @@
 set encoding=utf-8
-syntax on                   " syntax highlighting
+syntax enable               " syntax highlighting
 filetype plugin indent on   "allow auto-indenting depending on file type
 filetype plugin on
 set nocompatible            " disable compatibility to old-time vi
@@ -15,7 +15,7 @@ set shiftwidth=2            " width for autoindents
 set expandtab               " converts tabs to white space
 set smarttab
 set smartindent
-" set autoindent              " indent a new line the same amount as the line just typed
+" set autoindent            " indent a new line the same amount as the line just typed
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 set cc=80                  " set an 80 column border for good coding style
@@ -27,20 +27,15 @@ set ttyfast                 " Speed up scrolling in Vim
 " set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 "
-colo darkblue
-hi Keyword ctermfg=darkcyan
-hi Constant ctermfg=5*
-hi Comment ctermfg=2*
-hi Normal ctermbg=none
-hi LineNr ctermfg=darkgrey
- 
+
 " execute pathogen#infect()
+"
 
 """"""""""""""""""""""""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""""""""""""""""""""
 " Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 
 "Toggle NERDTree with Ctrl-N
 " map <C-n> :NERDTreeToggle<CR>
@@ -78,14 +73,26 @@ let NERDTreeShowHidden=1
 " " provide custom statusline: lightline.vim, vim-airline.
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+"""""""""""""""""""""""""""""""""""""""""
+" Haskell VIM
+"""""""""""""""""""""""""""""""""""""""""
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+
  
 """""""""""""""""""""""""""""""""""""""""
 " Vim Plug
 """""""""""""""""""""""""""""""""""""""""
 call plug#begin("~/.config/nvim/plugged")
 " Plugin Section
-" Plug 'roxma/nvim-completion-manager'
- Plug 'dracula/vim'
+ Plug 'dracula/vim', {'as': 'dracula'}
+ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+ Plug 'EdenEast/nightfox.nvim'
  Plug 'ryanoasis/vim-devicons'
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
@@ -94,9 +101,17 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'preservim/nerdcommenter' | Plug 'Xuyuanp/nerdtree-git-plugin'
  Plug 'mhinz/vim-startify'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'neovimhaskell/haskell-vim'
  Plug 'ctrlpvim/ctrlp.vim'
  Plug 'tpope/vim-fugitive'
  Plug 'alx741/vim-stylishask'
  Plug 'alx741/vim-hindent'
 call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""
+" Colour scheme
+"""""""""""""""""""""""""""""""""""""""""
+"colorscheme dracula
+"colorscheme tokyonight
+colorscheme nightfox
 
