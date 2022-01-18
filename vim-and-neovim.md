@@ -51,6 +51,10 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
  Plug 'chrisbra/csv.vim'
+ " For Hoogle
+ Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+ Plug 'monkoose/fzf-hoogle.vim'
+
 call plug#end()
 ```
 For VIM, simply put the above in `~/.vimrc` and replace `~/.config/nvim/plugged` 
