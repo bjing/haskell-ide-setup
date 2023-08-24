@@ -1,3 +1,10 @@
+"""""""""""""""""""""""""""""""""""""""""
+" Leader!
+"""""""""""""""""""""""""""""""""""""""""
+let mapleader = ","
+let localmapleader = "\<Space>"
+
+
 set encoding=utf-8
 syntax enable               " syntax highlighting
 filetype plugin indent on   "allow auto-indenting depending on file type
@@ -23,7 +30,7 @@ set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
-"set updatetime=800          " Make it shorter for messages to show faster
+set updatetime=800          " Make it shorter for messages to show faster
                             " This is set as per mouse hover tooltip popup time
 " set spell                 " enable spell check (may need to download language package)
 " set noswapfile            " disable creating swap file
@@ -33,12 +40,6 @@ set ttyfast                 " Speed up scrolling in Vim
 " execute pathogen#infect()
 "
 
-
-"""""""""""""""""""""""""""""""""""""""""
-" Leader!
-"""""""""""""""""""""""""""""""""""""""""
-let mapleader = ","
-let localmapleader = "\<Space>"
 
 
 """""""""""""""""""""""""""""""""""""""""
@@ -68,6 +69,15 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'chrisbra/csv.vim'
  Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
  Plug 'monkoose/fzf-hoogle.vim'
+ "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+ Plug 'junegunn/fzf.vim'
+ Plug 'github/copilot.vim'
+ Plug 'endel/vim-github-colorscheme'
+ Plug 'morhetz/gruvbox'
+ Plug 'ajmwagar/vim-deus'
+ Plug 'tpope/vim-surround'
+
+
 call plug#end()
 
 
@@ -90,18 +100,28 @@ let NERDTreeShowHidden=1
 " CoC
 """"""""""""""""""""""""""""""""""""""""""""""
 
-" " Use <c-space> to trigger completion.
-" if has('nvim')
-"   inoremap <silent><expr> <c-space> coc#refresh()
-" else
-"   inoremap <silent><expr> <c-@> coc#refresh()
-" endif
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 " 
 " " Make <CR> auto-select the first completion item and notify coc.nvim to
 " " format on enter, <cr> could be remapped by other vim plugin
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 "                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " 
+"
+"
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Applying code actions to the selected code block
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " GoTo code navigation.
 " The CursorHold hover action is terrible because there's no way to silence errors
@@ -111,22 +131,24 @@ nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gh :call CocActionAsync('doHover')<cr>
-map <Leader> gn <Plug>(coc-diagnostic-next)
-map <Leader> gp <Plug>(coc-diagnostic-prev)
-map <Leader> rn <Plug>(coc-rename)
-map <Leader> rf <Plug>(coc-refactor)
-map <Leader> qf <Plug>(coc-fix-current)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silentq ]g <Plug>(coc-diagnostic-next)
+map <Leader>rn <Plug>(coc-rename)
+map <Leader>rf <Plug>(coc-refactor)
 
-map <Leader> al <Plug>(coc-codeaction-line)
-map <Leader> ac <Plug>(coc-codeaction-cursor)
-map <Leader> ao <Plug>(coc-codelens-action)
+map <Leader>ql <Plug>(coc-codeaction-line)
+map <Leader>qc <Plug>(coc-codeaction-cursor)
+map <Leader>qo <Plug>(coc-codelens-action)
+map <Leader>qf <Plug>(coc-fix-current)
 
 nnoremap <Leader>kd :<C-u>CocList diagnostics<Cr>
 nnoremap <Leader>kc :<C-u>CocList commands<Cr>
 nnoremap <Leader>ko :<C-u>CocList outline<Cr>
 nnoremap <Leader>kr :<C-u>CocListResume<Cr>
 
-inoremap <silent><expr> <c-space> coc#refresh()
+nnoremap <F5> :buffers<CR>:buffer<Space>
+
+"inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -160,6 +182,12 @@ nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPacka
 
 
 """""""""""""""""""""""""""""""""""""""""
+" Golang
+"""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+
+
+"""""""""""""""""""""""""""""""""""""""""
 " Haskell VIM
 """""""""""""""""""""""""""""""""""""""""
 let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
@@ -183,7 +211,12 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""
 "colorscheme dracula
 "colorscheme tokyonight
-colorscheme nightfox
+"colorscheme nightfox
+"colorscheme quiet
+"colorscheme deus
+"" Light schemes
+"colorscheme github
+colorscheme gruvbox
 
 
 """""""""""""""""""""""""""""""""""""""""
