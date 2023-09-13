@@ -1,4 +1,5 @@
 # Introduction
+
 In this document I list all editors/IDEs I've personally used and the way to configure them to work with Haskell to have features like:
 * auto complete
 * syntax highlighting
@@ -18,6 +19,7 @@ I will try to keep these instructions up-to-date. However, feel free to send PR 
 
 
 # Haskell Tools
+
 The tools you'll need:
 * GHC (the compiler)
 * Build tools, `Stack` or `Cabal`
@@ -26,9 +28,22 @@ The tools you'll need:
 
 The easiest way to get started with Haskell is to use [GHCup](https://www.haskell.org/ghcup/).
 
-Since I use [stack](https://docs.haskellstack.org/en/stable/README/) personally, I'll discuss the correct way to install these tools using `stack` as well.
 
 ## Installation (GHCup)
+
+### Automated GHCup install
+
+Use [haskell/install.sh](haskell/install.sh) to install
+GHCUP, cabal, stack and HLS in one command.
+
+You can edit the env vars in the script to change what you 
+wanna install.
+
+```sh
+haskell/install.sh
+```
+
+### Manual GHCup install
 Install GHCup on Unix-like systems:
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
