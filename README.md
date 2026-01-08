@@ -17,6 +17,9 @@ I will try to keep these instructions up-to-date. However, feel free to send PR 
 
 [Visual Studio Code](vscode.md) - easiest to get started and works reasonably well 
 
+Doom Emacs - see [config/.doom.d](/config/.doom.d/) for detailed Doom configuration
+
+
 
 # Haskell Tools
 
