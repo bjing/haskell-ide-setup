@@ -75,6 +75,9 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(unless (display-graphic-p)
+  (xterm-mouse-mode 1))
+
 ;;;;;;;;;;;;;;;;;;
 ;; doc popup
 ;;;;;;;;;;;;;;;;;;
@@ -96,7 +99,7 @@
 
 ;;;;;;;;;;;;;;;;;;
 ;; eldoc-box config
-;; IMO not as good as lsp-ui
+;; IMO this is not as good as lsp-ui
 ;;;;;;;;;;;;;;;;;;
 ;;(use-package! eldoc-box
 ;;  :commands (eldoc-box-help-at-point)
