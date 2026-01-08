@@ -74,7 +74,30 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;;
 
+;; NeoTree
+(after! neotree
+  ;; Open like NERDTree
+  (map! :map neotree-mode-map
+        :n "o" #'neotree-enter
+        :n "l" #'neotree-enter
+        :n "h" #'neotree-select-up-node
+        :n "q" #'neotree-hide)
+
+  ;; Optional: open file then hide tree (comment out if you don't want this)
+  ;; (defun my/neotree-open-and-close ()
+  ;;   (interactive)
+  ;;   (neotree-enter)
+  ;;   (neotree-hide))
+  ;; (map! :map neotree-mode-map :n "o" #'my/neotree-open-and-close)
+
+  ;; Quality-of-life
+  (setq neo-smart-open t              ; jump to current file
+        neo-window-fixed-size nil     ; allow resizing
+        neo-show-hidden-files nil))   ; toggle with H
+
+;;
 (unless (display-graphic-p)
   (xterm-mouse-mode 1))
 
